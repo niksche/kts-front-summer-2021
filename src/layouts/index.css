@@ -36,9 +36,10 @@
 
 .UI-kit_git-repo-tile {
     margin: 10px;
+    padding: 5px;
+    padding-top: 5px;
     display: inline-block;
     width: 19vh;
-    height: 200px;
     background-color:blue;
 }
 
@@ -90,6 +91,18 @@
 .input_element {
     background-color: cadetblue;
     width: 19vh;
+}
+
+.input_disabled {
+    width: 15vh;
+}
+
+.input_focus {
+    width: 15vh;
+}
+
+.input_idle {
+    width: 15vh;
 }
 
 
