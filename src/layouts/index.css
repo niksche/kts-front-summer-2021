@@ -94,20 +94,24 @@
 }
 
 .input_disabled {
+    margin: 10px;
     width: 15vh;
 }
 
 .input_focus {
+    margin: 10px;
+    border-color: red;
     width: 15vh;
 }
 
 .input_idle {
+    margin: 10px;
     width: 15vh;
 }
 
 
 .buttons {
-    margin: 10px;
+    margin-top: 10px;
     padding: 10px;
     background-color: rebeccapurple;
     width: 80%;
@@ -115,7 +119,7 @@
 }
 
 .buttons_text {
-
+    padding: 10px;
     background-color: red;
 }
 
@@ -124,16 +128,18 @@
     display: inline-block;
     width: 19vh;
     background-color: tomato;
+    align-content: center;
 }
 
+.buttons_element_pic {
+    height: 50px;
+    width: 50px;
+    background-color: seagreen;
+}
 .icon {
-    /* default_background */
-
     height: 10px;
-    width: 10px;
-
-/* accent */
-background: #FF5555;
+    width: 10px;    
+    background: #FF5555;
 
 }
 
@@ -143,5 +149,54 @@ background: #FF5555;
 
 
 .git-repo-element_info {
+    font-size: 10px;
     background-color: chocolate;
+}
+
+
+.tmp {
+    border: solid 1px rgb(142, 149, 155);
+    padding: 10px;
+    width: 200px;
+    font-size: 40px;
+    border-radius: 4px;
+}
+
+.tmp_pic {
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    background-color:tomato;
+    width: 50px;
+    color: white;
+    height: 50px;
+}
+
+.tmp_inner {
+    padding: 10px;
+    display: inline-block;
+    font-size: 10px;
+    /* vertical-align: ; */
+}
+
+.tmp_inner_name {
+    font-display: bold;
+}
+
+.tmp_inner-star {
+    color:slategray;
+    display: inline-block;
+}
+ 
+.tmp_inner_img {
+    text-align: center;
+    line-height: 10px;
+    height: 10px;
+    width: 10px;
+}
+
+.tmp_inner_text {
+    color:slategray;
+
 }
