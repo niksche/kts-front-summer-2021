@@ -49,12 +49,3 @@ export interface IApiStore {
     request<SuccessT, ErrorT = any, ReqT = {}>(params: RequestParams<ReqT>): Promise<ApiResponse<SuccessT, ErrorT>>
 }
 
-type Second<shiet> = {
-    name: shiet
-};
-
-
-let person : Second<string> = {name: "hui"}
-
- 
-
