@@ -1,4 +1,4 @@
-import {ApiResponse, IApiStore, RequestParams} from "./types";
+import {ApiResponse, IApiStore, RequestParams, StatusHTTP} from "./types";
 
 export default class ApiStore implements IApiStore {
     readonly baseUrl: string;
@@ -6,7 +6,13 @@ export default class ApiStore implements IApiStore {
         this.baseUrl = baseUrl;
     }
 
-    request<SuccessT, ErrorT = any, ReqT = {}>(params: RequestParams<ReqT>): Promise<ApiResponse<SuccessT, ErrorT>> {
-        // TODO: Напишите здесь код, который с помощью fetch будет делать запрос
+    request<SuccessT, ErrorT = any, ReqT = {}>(params: RequestParams<ReqT>): Promise<ApiResponse<SuccessT, ErrorT>> {  
+        return fetch(params.endpoint, {
+            method: params.method,
+            headers: params.headers,
+            body: JSON.stringify(params.data)
+        }).then((res) => {
+            return res.json()
+        })
     }
 }

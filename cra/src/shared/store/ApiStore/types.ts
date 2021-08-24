@@ -1,6 +1,8 @@
 // Перечисление методов HTTP-запроса
-enum HTTPMethod {
-    // TODO: заполнить
+export enum HTTPMethod {
+    GET = 'GET',
+    POST = 'POST',
+    PUT = 'PUT'
 }
 
 // Параметры запроса
@@ -17,8 +19,11 @@ export type RequestParams<ReqT> = {
     data: ReqT;
 }
 
+
 // Перечисление статусов ответа
-enum StatusHTTP {
+export enum StatusHTTP {
+    "OK" = 200,
+    "FAILED"
     // TODO: заполнить
 }
 
@@ -43,3 +48,13 @@ export interface IApiStore {
     // Метод, с помощью которого делается запрос. TODO: реализовать в классе ApiStore
     request<SuccessT, ErrorT = any, ReqT = {}>(params: RequestParams<ReqT>): Promise<ApiResponse<SuccessT, ErrorT>>
 }
+
+type Second<shiet> = {
+    name: shiet
+};
+
+
+let person : Second<string> = {name: "hui"}
+
+ 
+
