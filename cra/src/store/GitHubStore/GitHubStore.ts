@@ -1,17 +1,13 @@
 import ApiStore from '../../shared/store/ApiStore';
+import { RequestParams } from '../../shared/store/ApiStore/types';
 import {IGitHubStore} from "./types";
-import RequestParams from '../../shared/store/types';
+// import RequestParams from '../../shared/store/types'
+
 
 export default class GitHubStore implements IGitHubStore {
-    private readonly apiStore = new ApiStore("/"); // TODO: не забудьте передать baseUrl в конструктор
+    private readonly apiStore = new ApiStore("https://api.github.com/orgs/google/repos"); // TODO: не забудьте передать baseUrl в конструктор
 
-
-
-    // TODO: реализовать интерфейс IGitHubStore
-
-
-    
-    async getOrganizationReposList(params: RequestParams<string>): Promise<ApiResp<RepoItem[]>> {
+    async getOrganizationReposList(params: RequestParams<string>): Promise<any> {
         return this.apiStore.request(params).then((res) => {
             return res;
         })
