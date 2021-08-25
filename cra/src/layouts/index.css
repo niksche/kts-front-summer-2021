@@ -1,19 +1,21 @@
 .git-repo-tile {
     border: solid 1px rgb(142, 149, 155);
     padding: 10px;
-    width: 24vh;
+    width: 26vh;
     font-size: 40px;
     border-radius: 4px;
     margin-bottom: 5px;
+    display: flex;
 }
 
 .git-repo-tile:hover {
     border: solid 1px rgb(19, 20, 21);
     padding: 10px;
-    width: 24vh;
+    width: 26vh;
 
     font-size: 40px;
     border-radius: 4px;
+    display: flex;
 }
 
 .git-repo-tile_pic {
@@ -65,28 +67,23 @@
 .repo-list {
     padding: 20px;
     margin:20px;
-    width: 25vh;
+    width: 27vh;
     border-radius: 5px;
     border: solid 1px grey;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.input {
-    display: inline-block;
-    width: 19vh;
-    height: 35px;
-    color: skyblue;
-}
+
 
 
 
 .input-field {
-    width: 16vh;
+    width: 20vh;
 
     height: 23px;
-    /* margin: 5px; */
+    margin: 5px;
     border-radius: 3px;
     border: solid 1px grey;
     line-height: 23px;
@@ -94,7 +91,7 @@
 }
 
 .input-field:focus {
-    width: 150px;
+    width: 20vh;
     height: 23px;
     margin: 5px;
     border-radius: 3px;
@@ -108,14 +105,15 @@
 }
 
 .search-button {
-    margin: 3px;
-    width: 35px;
-    height: 35px;
+    margin-bottom: 5px;
+    margin-block-start: 5px;
+    width: 28px;
+    height: 28px;
     background-color: tomato;
     display: inline-block;
-
+    flex-wrap: nowrap;
     text-align: center;
-    line-height: 36px;
+    line-height: 23px;
 
     border-radius: 5px;
     
@@ -128,14 +126,12 @@
 }
 
 .search-button:hover {
-    margin: 3px;
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
     background-color: rgb(230, 147, 133);
     display: inline-block;
 
     text-align: center;
-    line-height: 36px;
 
     border-radius: 5px;
     
@@ -143,8 +139,8 @@
 
 .search-button:disabled {
     margin: 3px;
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
     background-color: rgb(160, 160, 159);
     display: inline-block;
 
@@ -157,7 +153,8 @@
 
 .search-element {
     display: flex;
+    flex-direction: row;
     margin-bottom: 5px;
-
+    width: 26vh;
+    padding: 10px;
 }
-
