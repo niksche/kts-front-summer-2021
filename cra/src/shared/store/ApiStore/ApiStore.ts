@@ -54,7 +54,7 @@ export default class ApiStore implements IApiStore {
 
             return {
                 success: false,
-                data: null,
+                data: e,
                 status: StatusHTTP.UNEXPECTED_ERROR,
             }
 

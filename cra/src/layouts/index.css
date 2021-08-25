@@ -1,15 +1,17 @@
 .git-repo-tile {
     border: solid 1px rgb(142, 149, 155);
     padding: 10px;
-    width: 200px;
+    width: 24vh;
     font-size: 40px;
     border-radius: 4px;
+    margin-bottom: 5px;
 }
 
 .git-repo-tile:hover {
     border: solid 1px rgb(19, 20, 21);
     padding: 10px;
-    width: 200px;
+    width: 24vh;
+
     font-size: 40px;
     border-radius: 4px;
 }
@@ -66,6 +68,9 @@
     width: 25vh;
     border-radius: 5px;
     border: solid 1px grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .input {
@@ -78,9 +83,10 @@
 
 
 .input-field {
-    width: 150px;
+    width: 16vh;
+
     height: 23px;
-    margin: 5px;
+    /* margin: 5px; */
     border-radius: 3px;
     border: solid 1px grey;
     line-height: 23px;
@@ -112,6 +118,7 @@
     line-height: 36px;
 
     border-radius: 5px;
+    
     
 }
 
@@ -146,5 +153,11 @@
 
     border-radius: 5px;
     
+}
+
+.search-element {
+    display: flex;
+    margin-bottom: 5px;
+
 }
 
