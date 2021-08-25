@@ -42,7 +42,7 @@ export type ApiResponse<SuccessT, ErrorT> =
 }
     | {
     success: false;
-    data: null;
+    data: any;
     status: StatusHTTP;
 };
 
