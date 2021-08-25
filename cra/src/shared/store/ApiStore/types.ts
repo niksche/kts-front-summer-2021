@@ -28,6 +28,10 @@ export enum StatusHTTP {
     // TODO: заполнить
 }
 
+export type RepoItem = {
+
+};
+
 // Ответ API
 export type ApiResponse<SuccessT, ErrorT> =
     | {
@@ -44,6 +48,7 @@ export type ApiResponse<SuccessT, ErrorT> =
     success: false;
     data: any;
     status: StatusHTTP;
+
 };
 
 // Интерфейс для класса, с помощью которого можно делать запросы к API

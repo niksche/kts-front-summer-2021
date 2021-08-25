@@ -1,3 +1,5 @@
+import { ApiResponse, RepoItem } from "../../shared/store/ApiStore/types";
+
 /** Интерфейс класса для работы с GitHub API
  * названия getOrganizationReposList
  * (а также типов GetOrganizationReposListParams и RepoItem)
@@ -5,6 +7,11 @@
  * Или не меняйте, если делаете запрос за списком репоизториев для организации)
  * Выберите любой запрос из публичного API GitHub.
  */
+
+export type GetOrganizationReposListParams = {
+    organizationName: string,
+}
+
 export interface IGitHubStore {
-    getOrganizationReposList(params: GetOrganizationReposListParams): Promise<ApiResp<RepoItem[]>>;
+    getOrganizationReposList(params: GetOrganizationReposListParams): Promise<ApiResponse<RepoItem[]>>;
 }
