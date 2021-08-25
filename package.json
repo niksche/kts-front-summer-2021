@@ -7,9 +7,11 @@
   "author": "Nikita Schelkanov <nik.schelkanov@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "qs": "^6.10.1",
     "react": "^17.0.2"
   },
   "devDependencies": {
+    "@types/qs": "^6.9.7",
     "eslint": "^7.32.0"
   }
 }

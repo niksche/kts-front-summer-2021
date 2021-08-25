@@ -22,6 +22,7 @@ export type RequestParams<ReqT> = {
 
 // Перечисление статусов ответа
 export enum StatusHTTP {
+    "UNEXPECTED_ERROR" = 'UNEXPECTED_ERROR',
     "OK" = 200,
     "FAILED"
     // TODO: заполнить
@@ -37,6 +38,11 @@ export type ApiResponse<SuccessT, ErrorT> =
     | {
     success: false;
     data: ErrorT;
+    status: StatusHTTP;
+}
+    | {
+    success: false;
+    data: null;
     status: StatusHTTP;
 };
 
