@@ -23,7 +23,11 @@
      box-shadow: 0px 0px 5px rgb(19, 20, 21);
 }
 
+
 .git-repo-tile__footer {
+    display: inline-block;
+}
+.git-repo-tile_stars {
     display: inline-block;
 }
 
@@ -65,6 +69,7 @@
 
 .git-repo-tile__org-link {
     color:slategray;
+    width: 100%;
 
 }
 
