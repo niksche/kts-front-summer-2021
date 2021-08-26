@@ -80,11 +80,9 @@
 
 
 .input {
-    /* width: 80%; */
+    margin: 10px;
+    flex-grow: 1;
 }
-
-
-
 
 .input-field {
     width: 100%;
@@ -109,7 +107,7 @@
     background-color: tomato;
     display: inline-block;
     flex-wrap: nowrap;
-
+    flex-shrink: 0;
     border-radius: 5px;  
 }
 
