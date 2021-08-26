@@ -9,13 +9,7 @@
 }
 
 .git-repo-tile:hover {
-    border: solid 1px rgb(19, 20, 21);
-    padding: 10px;
-    width: 26vh;
-
-    font-size: 40px;
-    border-radius: 4px;
-    display: flex;
+     box-shadow: 0px 0px 5px rgb(19, 20, 21);
 }
 
 .git-repo-tile_pic {
@@ -114,10 +108,15 @@
     flex-wrap: nowrap;
     text-align: center;
     line-height: 23px;
+    border-radius: 5px;  
+}
 
-    border-radius: 5px;
-    
-    
+.search-button:hover {
+    background-color: rgb(230, 147, 133);
+}
+
+.search-button:disabled {
+    background-color: rgb(160, 160, 159);  
 }
 
 .search-button_img {
@@ -125,31 +124,6 @@
     width: 13px;
 }
 
-.search-button:hover {
-    width: 28px;
-    height: 28px;
-    background-color: rgb(230, 147, 133);
-    display: inline-block;
-
-    text-align: center;
-
-    border-radius: 5px;
-    
-}
-
-.search-button:disabled {
-    margin: 3px;
-    width: 28px;
-    height: 28px;
-    background-color: rgb(160, 160, 159);
-    display: inline-block;
-
-    text-align: center;
-    line-height: 36px;
-
-    border-radius: 5px;
-    
-}
 
 .search-element {
     display: flex;
