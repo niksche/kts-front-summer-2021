@@ -25,7 +25,6 @@ export enum StatusHTTP {
     "UNEXPECTED_ERROR" = 'UNEXPECTED_ERROR',
     "OK" = 200,
     "FAILED"
-    // TODO: заполнить
 }
 
 export type RepoItem = {
@@ -59,4 +58,3 @@ export interface IApiStore {
     // Метод, с помощью которого делается запрос. TODO: реализовать в классе ApiStore
     request<SuccessT, ErrorT = any, ReqT = {}>(params: RequestParams<ReqT>): Promise<ApiResponse<SuccessT, ErrorT>>
 }
-
