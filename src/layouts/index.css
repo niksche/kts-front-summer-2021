@@ -1,7 +1,18 @@
+.repo-list {
+    padding: 20px;
+    margin: 20px;
+    width: 370px;
+    border-radius: 5px;
+    border: solid 1px grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .git-repo-tile {
     border: solid 1px rgb(142, 149, 155);
-    padding: 10px;
-    width: 26vh;
+    padding: 5px;
+    width: 100%;
     font-size: 40px;
     border-radius: 4px;
     margin-bottom: 5px;
@@ -12,7 +23,12 @@
      box-shadow: 0px 0px 5px rgb(19, 20, 21);
 }
 
+.git-repo-tile_stars {
+    display: inline-block;
+}
+
 .git-repo-tile_pic {
+    margin: 5px;
     text-align: center;
     line-height: 50px;
     border-radius: 50px;
@@ -27,7 +43,6 @@
     padding: 10px;
     display: inline-block;
     font-size: 10px;
-    /* vertical-align: ; */
 }
 
 .git-repo-tile_inner_name {
@@ -58,23 +73,16 @@
 }
 
 
-.repo-list {
-    padding: 20px;
-    margin:20px;
-    width: 27vh;
-    border-radius: 5px;
-    border: solid 1px grey;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+.input {
+    width: 80%;
 }
 
 
 
 
-
 .input-field {
-    width: 20vh;
+    width: 100%;
 
     height: 23px;
     margin: 5px;
@@ -85,13 +93,7 @@
 }
 
 .input-field:focus {
-    width: 20vh;
-    height: 23px;
-    margin: 5px;
-    border-radius: 3px;
     border: solid 1px tomato;
-    line-height: 23px;
-    font-size: 10px;
 }
 
 .input-field:disabled {
@@ -99,6 +101,7 @@
 }
 
 .search-button {
+    margin-left: 5px;
     margin-bottom: 5px;
     margin-block-start: 5px;
     width: 28px;
@@ -106,18 +109,11 @@
     background-color: tomato;
     display: inline-block;
     flex-wrap: nowrap;
-    text-align: center;
-    line-height: 23px;
+
     border-radius: 5px;  
 }
 
-.search-button:hover {
-    background-color: rgb(230, 147, 133);
-}
 
-.search-button:disabled {
-    background-color: rgb(160, 160, 159);  
-}
 
 .search-button_img {
     height: 13px;
@@ -129,6 +125,7 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 5px;
-    width: 26vh;
+    width: 100%;
     padding: 10px;
 }
+
