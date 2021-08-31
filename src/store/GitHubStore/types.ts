@@ -4,9 +4,11 @@ import { ApiResponse, RepoItem } from "../../shared/store/ApiStore/types";
  */
 
 export type GetOrganizationReposListParams = {
-    organizationName: string,
-}
+  organizationName: string;
+};
 
 export interface IGitHubStore {
-    getOrganizationReposList(params: GetOrganizationReposListParams): Promise<ApiResponse<RepoItem[],any>>;
+  getOrganizationReposList(
+    params: GetOrganizationReposListParams
+  ): Promise<ApiResponse<RepoItem[], any>>;
 }

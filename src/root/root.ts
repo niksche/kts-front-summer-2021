@@ -1,13 +1,15 @@
 // Демонстрация создания и использования GitHubStore
 
-import GitHubStore from '../store/GitHubStore/GitHubStore';
+import GitHubStore from "../store/GitHubStore/GitHubStore";
 
 const gitHubStore = new GitHubStore();
 
-const EXAMPLE_ORGANIZATION = 'ktsstudio';
+const EXAMPLE_ORGANIZATION = "ktsstudio";
 
-gitHubStore.getOrganizationReposList({
-  organizationName: EXAMPLE_ORGANIZATION
-}).then(result => {
-  console.log(result);
-})
+gitHubStore
+  .getOrganizationReposList({
+    organizationName: EXAMPLE_ORGANIZATION,
+  })
+  .then((result) => {
+    console.log(result);
+  });

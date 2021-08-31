@@ -26,3 +26,4 @@ yarn-error.log*
 #
 /.vscode
 .eslintrc
+.prettierrc.json
