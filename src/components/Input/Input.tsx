@@ -16,5 +16,4 @@ const Input: React.FC<InpurProps> = ({ value, placeholder, onChange }) => {
     </div>
 };
 
-
 export default Input;

@@ -1,13 +1,16 @@
+import { ReactNode } from "react";
 import "./Button.css";
 
 type ButtonProps = {
     onClick: () => void,
-    children: string
+    children: ReactNode,
+    // disabled: boolean
 }
+
 const Button: React.FC<ButtonProps> = ({ onClick, children }) => {
-    return <div className="search-button">
-        <img className="search-button_img" onClick={onClick} src={String(children)} alt="star" />
-    </div>
+    return <button className="search-button" onClick={onClick}>
+        {children}
+    </button>
 }
 
 export default Button;
