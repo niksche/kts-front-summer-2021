@@ -1,0 +1,15 @@
+.search-button {
+    width: 28px;
+    height: 28px;
+    background-color: tomato;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    border-radius: 5px;
+    line-height: 28px;
+  }
+  
+  .search-button_img {
+    height: 13px;
+    width: 13px;
+    margin-left: 6px;
+  }
