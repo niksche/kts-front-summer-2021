@@ -1,13 +1,13 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import "./Button.css";
 
 type ButtonProps = {
-    onClick: () => void,
-    children: ReactNode,
-    // disabled: boolean
+    onClick: (e: React.MouseEvent) => void,
+    children: React.ReactNode,
+    disabled?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, children }) => {
+const Button: React.FC<ButtonProps> = ({ onClick, children, disabled }) => {
     return <button className="search-button" onClick={onClick}>
         {children}
     </button>

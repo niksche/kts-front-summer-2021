@@ -3,7 +3,7 @@ import "./Avatar.css";
 type AvatarProps = {
     alt: string,
     letter: symbol,
-    imageSrc: string
+    imageSrc?: string
 };
 
 const Avatar: React.FC<AvatarProps> = ({ alt, letter, imageSrc }) => {

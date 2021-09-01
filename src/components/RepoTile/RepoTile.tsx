@@ -1,3 +1,5 @@
+import React from "react";
+
 import { RepoItem } from "src/shared/store/ApiStore/types";
 
 
@@ -10,7 +12,7 @@ import "./RepoTile.css";
 
 type RepoTileProps = {
     item: RepoItem,
-    onClick: () => void
+    onClick: (e: React.MouseEvent) => void
 }
 
 

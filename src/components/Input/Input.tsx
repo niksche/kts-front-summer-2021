@@ -1,9 +1,9 @@
 import "./Input.css";
 
 type InpurProps = {
-    value: string,
+    value?: string,
     placeholder: string,
-    onChange: (e: InputEvent) => void
+    onChange: (e: any) => void
 }
 
 const Input: React.FC<InpurProps> = ({ value, placeholder, onChange }) => {
