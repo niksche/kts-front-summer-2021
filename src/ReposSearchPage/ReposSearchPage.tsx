@@ -32,7 +32,7 @@ const ReposSearchPage = () => {
             const infD = result
         });
 
-    const [repo, setRepo] = React.useState([{ id: 0, url: "", name: "" }, { id: 0, url: "", name: "" }]);
+    const [repo, setRepo] = React.useState([{ id: 0, url: "", name: "", stargazers_count: 0 }, { id: 0, url: "", name: "", stargazers_count: 0 }]);
     React.useEffect(() => {
         const fetchRepos = async () => {
             let response = await dataRep;

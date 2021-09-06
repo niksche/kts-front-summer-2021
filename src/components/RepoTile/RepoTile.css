@@ -46,6 +46,14 @@
   .git-repo-tile_inner-star {
     color: slategray;
     display: inline-block;
+    margin-right: 20px;
+  }
+
+
+  .git-repo-tile_updated {
+    color: slategray;
+    display: inline-block;
+    
   }
   
   .git-repo-tile_inner_img {

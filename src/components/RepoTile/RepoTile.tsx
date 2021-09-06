@@ -20,7 +20,7 @@ type RepoTileProps = {
 
 const RepoTile: React.FC<RepoTileProps> = ({ item, onClick }) => {
     return <div className="git-repo-tile">
-        <Avatar alt={"repositoryImage"} letter={Symbol('a')} imageSrc={imgsrc} />
+        <Avatar alt={item.name[1]} letter={Symbol('a')} imageSrc={""} />
         <div className="git-repo-tile_inner">
             <div className="git-repo-tile_inner_name">{item.name}</div>
             <a href={item.url} className="git-repo-tile__org-link">{item.name}</a>
@@ -28,9 +28,9 @@ const RepoTile: React.FC<RepoTileProps> = ({ item, onClick }) => {
             <div className="git-repo-tile__footer">
                 <div className="git-repo-tile_stars">
                     <StarIcon />
-                    <div className="git-repo-tile_inner-star">{item.id}</div>
+                    <div className="git-repo-tile_inner-star">{item.stargazers_count}</div>
                 </div>
-                <div className="git-repo-tile_inner-star">Updated 21 July</div>
+                <div className="git-repo-tile_updated">Updated 21 July</div>
             </div>
         </div>
     </div>

@@ -34,7 +34,9 @@ export type GithubRepoOwner = {
 export type RepoItem = {
   id: number,
   url: string,
-  name: string
+  name: string,
+  stargazers_count: number
+
 };
 
 // Ответ API
