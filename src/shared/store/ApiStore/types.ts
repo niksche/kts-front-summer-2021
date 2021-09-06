@@ -3,7 +3,7 @@ export enum HTTPMethod {
   GET = "GET",
   POST = "POST",
   PUT = "PUT",
-}
+};
 
 // Параметры запроса
 export type RequestParams<ReqT> = {
@@ -24,27 +24,36 @@ export enum StatusHTTP {
   "UNEXPECTED_ERROR" = "UNEXPECTED_ERROR",
   "OK" = 200,
   "FAILED",
-}
+};
+export type GithubRepoOwner = {
+  id: number,
+  url: string,
+  login: string
+};
 
-export type RepoItem = {};
+export type RepoItem = {
+  id: number,
+  url: string,
+  name: string
+};
 
 // Ответ API
 export type ApiResponse<SuccessT, ErrorT> =
   | {
-      success: true;
-      data: SuccessT;
-      status: StatusHTTP;
-    }
+    success: true;
+    data: SuccessT;
+    status: StatusHTTP;
+  }
   | {
-      success: false;
-      data: ErrorT;
-      status: StatusHTTP;
-    }
+    success: false;
+    data: ErrorT;
+    status: StatusHTTP;
+  }
   | {
-      success: false;
-      data: any;
-      status: StatusHTTP;
-    };
+    success: false;
+    data: any;
+    status: StatusHTTP;
+  };
 
 // Интерфейс для класса, с помощью которого можно делать запросы к API
 export interface IApiStore {

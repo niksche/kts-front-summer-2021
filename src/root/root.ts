@@ -11,5 +11,13 @@ gitHubStore
     organizationName: EXAMPLE_ORGANIZATION,
   })
   .then((result) => {
-    console.log(result);
+
+    if (result.success) {
+      { /* eslint-disable-next-line no-console */ }
+      console.log(result.data.map(repo => {
+        return [repo.name, repo.id, repo.url];
+      }));
+
+    }
+    const infD = result
   });
