@@ -1,16 +1,16 @@
 import React from "react";
 
+import Button from "@components/Button";
+import Input from "@components/Input";
+import RepoTile from "@components/RepoTile";
+import SearchIcon from "@components/SearchIcon";
 import { RepoItem } from "src/shared/store/ApiStore/types";
 
-import Button from "../components/Button";
-import Input from "../components/Input";
-import RepoTile from "../components/RepoTile";
-import SearchIcon from "../components/SearchIcon";
 import GitHubStore from "../store/GitHubStore";
 
-
-
 import "./ReposSearchPage.css";
+
+
 
 const ReposSearchPage = () => {
 
