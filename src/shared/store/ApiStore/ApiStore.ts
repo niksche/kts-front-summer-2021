@@ -1,65 +1,68 @@
 import qs from "qs";
-import {ApiResponse, HTTPMethod, IApiStore, RequestParams, StatusHTTP} from "./types";
+
+import {
+  ApiResponse,
+  HTTPMethod,
+  IApiStore,
+  RequestParams,
+  StatusHTTP,
+} from "./types";
 
 export default class ApiStore implements IApiStore {
-    readonly baseUrl: string;
-    
-    constructor(baseUrl: string) {
-        this.baseUrl = baseUrl;
+  readonly baseUrl: string;
+
+  constructor(baseUrl: string) {
+    this.baseUrl = baseUrl;
+  }
+
+  getRequestData<ReqT>(params: RequestParams<ReqT>): [string, RequestInit] {
+    let endpoint: string = `${this.baseUrl}${params.endpoint}`;
+
+    const req: RequestInit = {
+      method: params.method,
+      headers: { ...params.headers },
+    };
+
+    if (params.method === HTTPMethod.GET) {
+      endpoint = `${endpoint}${qs.stringify(params.data)}`;
     }
 
-    getRequestData<ReqT>(params: RequestParams<ReqT>) : [string,RequestInit] {
+    if (params.method === HTTPMethod.POST) {
+      req.body = JSON.stringify(params.data);
+      req.headers = {
+        ...req.headers,
+        "Content-Type": "application/json;charset=utf-8",
+      };
+    }
+    return [endpoint, req];
+  }
 
-        let endpoint : string = `${this.baseUrl}${params.endpoint}`;
+  async request<SuccessT, ErrorT = any, ReqT = {}>(
+    params: RequestParams<ReqT>
+  ): Promise<ApiResponse<SuccessT, ErrorT>> {
+    try {
+      const [endpoint, req] = this.getRequestData(params);
+      let response = await fetch(endpoint, req);
 
-        const req : RequestInit = {
-            method : params.method,
-            headers : {...params.headers},
+      if (response.ok) {
+        return {
+          success: true,
+          data: await response.json(),
+          status: response.status,
         };
+      }
 
-        if (params.method === HTTPMethod.GET) {
-            endpoint = `${endpoint}${qs.stringify(params.data)}`;
-        }
-
-        if (params.method === HTTPMethod.POST) {
-            req.body = JSON.stringify(params.data);
-            req.headers = {
-                ...req.headers,
-                'Content-Type' : 'application/json;charset=utf-8',
-            }
-        };
-        return [endpoint, req];
+      return {
+        success: false,
+        data: await response.json(),
+        status: response.status,
+      };
+    } catch (e) {
+      return {
+        success: false,
+        data: e,
+        status: StatusHTTP.UNEXPECTED_ERROR,
+      };
     }
-
-    async request<SuccessT, ErrorT = any, ReqT = {}>(params: RequestParams<ReqT>): Promise<ApiResponse<SuccessT, ErrorT>> { 
-        try {
-            const [endpoint, req] = this.getRequestData(params);
-            let response = await fetch(endpoint,req);
-
-            if (response.ok) {
-                return {
-                    success:true,
-                    data: await response.json(),
-                    status: response.status,
-                }
-            }
-
-            return {
-                success: false,
-                data: await response.json(),
-                status: response.status,
-            }
-
-        } catch (e) {
-
-            return {
-                success: false,
-                data: e,
-                status: StatusHTTP.UNEXPECTED_ERROR,
-            }
-
-        }
-        
-        
-    }
+  }
 }
