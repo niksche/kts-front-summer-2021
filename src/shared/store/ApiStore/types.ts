@@ -36,8 +36,17 @@ export type RepoItem = {
   url: string,
   name: string,
   stargazers_count: number
-
 };
+
+
+export type RepoInfo = {
+  id: number,
+  url: string,
+  name: string,
+  description: string
+  stargazers_count: number
+};
+
 
 // Ответ API
 export type ApiResponse<SuccessT, ErrorT> =

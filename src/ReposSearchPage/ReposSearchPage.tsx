@@ -29,7 +29,6 @@ const ReposSearchPage = () => {
                 { /* eslint-disable-next-line no-console */ }
                 return result.data;
             }
-            const infD = result
         });
 
     const [repo, setRepo] = React.useState([{ id: 0, url: "", name: "", stargazers_count: 0 }]);
