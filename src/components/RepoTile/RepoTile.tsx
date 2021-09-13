@@ -1,7 +1,7 @@
 import React from "react";
 
+import { Link } from 'react-router-dom';
 import { RepoItem } from "src/shared/store/ApiStore/types";
-
 
 import Avatar from "../Avatar";
 import StarIcon from "../StarIcon";
@@ -19,7 +19,7 @@ type RepoTileProps = {
 
 
 const RepoTile: React.FC<RepoTileProps> = ({ item, onClick }) => {
-    return <div className="git-repo-tile">
+    return <Link to={`/repos/${item.name}`} className="git-repo-tile">
         <Avatar alt={item.name[1]} letter={Symbol('a')} imageSrc={""} />
         <div className="git-repo-tile_inner">
             <div className="git-repo-tile_inner_name">{item.name}</div>
@@ -33,7 +33,7 @@ const RepoTile: React.FC<RepoTileProps> = ({ item, onClick }) => {
                 <div className="git-repo-tile_updated">Updated 21 July</div>
             </div>
         </div>
-    </div>
+    </Link>
 }
 
 

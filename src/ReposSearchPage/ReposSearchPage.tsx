@@ -32,7 +32,7 @@ const ReposSearchPage = () => {
             const infD = result
         });
 
-    const [repo, setRepo] = React.useState([{ id: 0, url: "", name: "", stargazers_count: 0 }, { id: 0, url: "", name: "", stargazers_count: 0 }]);
+    const [repo, setRepo] = React.useState([{ id: 0, url: "", name: "", stargazers_count: 0 }]);
     React.useEffect(() => {
         const fetchRepos = async () => {
             let response = await dataRep;
@@ -52,7 +52,7 @@ const ReposSearchPage = () => {
             <Button onClick={() => { }} children={<SearchIcon />} isDisabled={true} />
         </div>
         {repo.map((el) => {
-            return <RepoTile item={el} onClick={() => { }} />
+            return <RepoTile item={el} onClick={() => { }} key={el.id} />
         })}
 
     </div>);
