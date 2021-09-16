@@ -2,10 +2,24 @@ import './Drawer.css';
 
 import React from 'react';
 
+import axios from 'axios';
+import { formatWithCursor } from 'prettier';
+import { stringify } from 'qs';
 import { useParams } from 'react-router';
 import { RepoInfo } from 'src/shared/store/ApiStore/types';
 
 import GitHubStore from '../../store/GitHubStore';
+
+
+export type RepoItem = {
+    id: number;
+    url: string;
+    name: string;
+    description: string;
+    stargazers_count: number;
+
+};
+
 
 const Drawer: React.FC<any> = () => {
 
@@ -18,33 +32,22 @@ const Drawer: React.FC<any> = () => {
     const EXAMPLE_ORGANIZATION = "ktsstudio";
     const EXAMPLE_REPO = { name };
 
-
-
-    const dataRep = gitHubStore
-        .getOrganizationRepoByName({
-            organizationName: EXAMPLE_ORGANIZATION,
-            repoName: EXAMPLE_REPO.name,
-        })
-        .then((result) => {
-            if (result.success) {
-                return result.data
-            }
-
-        });
-
     const [repo, setRepo] = React.useState({ id: 0, url: "", name: "", description: "", stargazers_count: 0 });
 
-    React.useEffect(() => {
 
-        const fetchRepos = async () => {
-            let response = await dataRep;
-            if (response) {
-                const al: RepoInfo = response;
-                setRepo(al);
-            }
+
+    React.useEffect(() => {
+        const fetch = async (repoName: string) => {
+            const repoInfo = await axios({
+                method: 'get',
+                url: `https://api.github.com/repos/ktsstudio/${repoName}`,
+            })
+            // eslint-disable-next-line no-console
+            console.log("res: ", repoInfo.data)
+            setRepo(repoInfo.data)
         };
-        fetchRepos();
-    }, []);
+        fetch(EXAMPLE_REPO.name)
+    }, [])
 
     return <div>
         {repo.description}
