@@ -1,0 +1,10 @@
+.repo-list {
+    padding: 20px;
+    margin: 20px;
+    width: 370px;
+    border-radius: 5px;
+    border: solid 1px grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
